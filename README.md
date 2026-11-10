@@ -1,5 +1,9 @@
 # 星火征程
 
+- GitHub 私有仓库：[tao521521/star-journey](https://github.com/tao521521/star-journey)
+- Netlify 网站：[星火征程](https://creative-melba-512a1a.netlify.app)
+- 日常开发目录：`E:\星火征程\star-journey`（原 `xinghuo` 目录保留为旧项目副本）
+
 GitHub 协作与持续部署配置见 [GitHub与Netlify部署说明](GitHub与Netlify部署说明.md)。这是无需构建的静态项目，Netlify 发布目录为 `dist`，构建命令留空。
 
 纪念中国工农红军长征胜利90周年原创互动学习作品。主题为“九十载长征·代码续星火”。以热烈朱红、暖金、纸张底色和原创木刻风主题插画，连接历史学习与青年行动。
