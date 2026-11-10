@@ -1,0 +1,28 @@
+name: Site checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax
+        run: |
+          node --check dist/app.js
+          node --check dist/data.js
+          node --check dist/core.js
+      - name: Verify game rules and content references
+        run: node --test tests/core.test.cjs
+      - name: Check deploy entrypoint
+        run: test -f dist/index.html && test -f dist/assets/long-march-woodcut.png
