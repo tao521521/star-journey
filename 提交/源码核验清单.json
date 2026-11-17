@@ -1,7 +1,7 @@
 {
   "源码包": "星火征程-完整源码.zip",
   "文件数": 41,
-  "源码包SHA256": "cdb3d95017532c9ad4caf7db3a6ba98ddb36daf770838890924765d9884846c1",
+  "源码包SHA256": "56a25d50acbae9ad10c4afb6da0565734e1c076bfa63446ea7b35476c7454465",
   "文件SHA256": {
     ".github/workflows/checks.yml": "98f103d0275cb697794ca07d627ae63463a2b1fb29d4e8ca1991525016899896",
     ".gitignore": "78912d605e9def2f873cb58c2b9d68a6d213050720e894793d2cc04a593d6e4d",
@@ -29,12 +29,12 @@
     "dist/assets/star.svg": "9a01730e5dfa69e2042f6cca89d5904e7298d20eea176b8250e1432beab43924",
     "dist/core.js": "c3d967b1745b47720fd8c319f51fbf8c686ad06a0d6ca15a36ec7d0175d6d000",
     "dist/data.js": "b12f1d53cc1ee236f622e1e1f4b988327c2cbb72e8329f6d21e7c5580e4ce33c",
-    "dist/index.html": "6c5d71563b0b81e417bf6e8d29d632df2038f0742cfdc451ccdbcc0dc27df47d",
+    "dist/index.html": "df055bd391a6a0e94a7f36922e29b59c271cdd2f08532aed3d53d1d843acbdce",
     "dist/media.js": "3e1d2d9c3b56573b860bdda6d2d675edab80fa588fa994e994980072ddb18d39",
-    "dist/style.css": "6475d2b3a3675e05fe30ab0c584a8c474dd76bd23f9ccb028e91958695c4d948",
+    "dist/style.css": "efd10fbd6392328a37a3d5fd7504dc413b2782a9451e3086b44cef18d0e6c8e8",
     "GitHub与Netlify部署说明.md": "1c54b3bed2bc006c15c8ea4bb71529884cf9438d64c26a3560356654e381467b",
     "netlify.toml": "3923f264ccb9b7f901d0703f4aa48d715de2874e3b253ad1f73a88f7f124df2c",
-    "README.md": "962125ba28fa2a36ceb53dd18aba4dc4bdc526cec14704fb26f13eb67ea93179",
+    "README.md": "88e7ceae5716f04c679ad2cbf344e42f443444fab51ebe5b1d2286edce7b7710",
     "run.py": "fb4119b998bbafc3428479de3fa672947f54e9da2ff08586ecb3a46437749cba",
     "tests/core.test.cjs": "ad6d7cb62501a7962a0c9f745d79ebd580665263788d4082bd568f773b2032d0",
     "tests/media.test.cjs": "707bcf3828f9b394f0d28419e577b265d7bb37c4bc12caab4ef80c19bf0f26be",
@@ -43,7 +43,7 @@
     "演示与提交说明.md": "ca764b12445dd4a3c30cc38e60baac7b12ea4ef9cd1a960f69e1f01ae590ce95",
     "素材与史实核查.md": "a1d7d6bc01b6b8e33bcf41bd0ca849616c64ec86a9c8b785fb46b0ea685a58ad",
     "设计与素材说明.md": "de67810c30609435f9f615d8f41117438c5c813db88d74f1f4fb90809d43a9dc",
-    "验证记录.md": "5c4da6808ae7a20fc6c6b7351ac2c9046d1b2ab2eaec99d8abd94d71cce7906f"
+    "验证记录.md": "c8a45f946b2ceb46db6c3e0e88d2b0c5ff7d4d670e747596c229fe9079e05f24"
   },
   "排除内容": [
     "Git元数据",
