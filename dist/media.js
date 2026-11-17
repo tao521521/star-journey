@@ -16,4 +16,6 @@
   if(s.id!=='mountain')s.cover=s.gallery[0].src;
  });
  D.historicalMap={src:'assets/long-march-historical-map.jpg',title:'中国工农红军长征路线示意图',source:'https://www.dswxyjy.org.cn/GB/427277/462086/',publisher:'中央党史和文献研究院'};
+ // 学习进度入口，原图路线与地名保持不变，标记不作为测绘坐标。
+ D.progressPins={yudu:[64,84.8],xiangjiang:[48,86.5],zunyi:[33.5,76.5],chishui:[30,71.5],luding:[19.7,62.5],snow:[21.8,54.5],grass:[28.1,44.2],wuqi:[41,23.5],huining:[30.6,29.4]};
 })();

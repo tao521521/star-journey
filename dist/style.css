@@ -225,3 +225,66 @@ html{scrollbar-gutter:stable}body{overflow-x:clip}@media(max-width:650px){nav a:
 h1,h2,h3{text-wrap:balance}.memory-grid>.story-card:has(.story-radio){grid-column:1/-1}.memory-grid>.story-card:has(.story-radio) .story-open{display:grid;grid-template-columns:1fr 1.5fr;align-items:stretch}.memory-grid>.story-card:has(.story-radio) .story-art{height:100%;aspect-ratio:3/2}.memory-grid>.story-card:has(.story-radio) .story-copy{align-self:center}@media(max-width:650px){.filter-tabs{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:thin;padding-bottom:12px}.filter-tabs button{flex:0 0 auto}.memory-grid>.story-card:has(.story-radio) .story-open{display:block}.memory-grid>.story-card:has(.story-radio) .story-art{height:auto}}
 
 .side-poster>.anniversary{display:block}.side-poster>small{display:block;margin-top:12px}.relation-card strong{text-wrap:balance}
+
+/* 顶部导航与通关地图：浏览、选中和通关分别表达。 */
+body .app-shell{margin:0}
+body #content{max-width:1280px;padding:32px 38px 0;margin:auto}
+.site-header{display:flex;align-items:center;justify-content:space-between;gap:28px;min-height:92px;padding:18px max(28px,calc((100% - 1204px)/2));border-bottom:1px solid var(--line);background:#faf7f1}
+.site-header .brand{display:flex;flex-shrink:0;gap:12px}
+.site-header .brand strong{font-size:25px;white-space:nowrap}
+.site-header nav{flex-direction:row;gap:4px;align-items:center}
+.site-header nav a{display:flex;flex-direction:row;gap:0;min-height:48px;padding:10px 14px;font-size:17px;white-space:nowrap;border-radius:6px;color:#685846;box-shadow:none}
+.site-header nav a .icon,.site-header nav a small{display:none}
+.site-header nav a:hover,.site-header nav a:focus-visible{background:#efdfc8;color:var(--red-dark);transform:translateY(-2px)}
+.site-header nav a.active,.site-header nav a.active:hover,.site-header nav a.active:focus-visible{background:var(--red-dark);color:#fff7e8}
+.header-progress{flex-shrink:0;min-width:88px;text-align:left;padding:5px 0;font-size:15px;color:#75604a}
+.header-progress>span:first-child{display:flex;justify-content:space-between;gap:10px}
+.header-progress b{color:var(--red);font-weight:600;white-space:nowrap}
+.header-progress .progress-track{margin:7px 0 0;height:4px;border-radius:4px;overflow:hidden}
+body footer{max-width:1204px;margin:45px auto 0;padding:25px 0}
+.skip-link{left:20px}.toast{left:50%}
+.journey-layout{display:block}
+.route-atlas{background:#f6efe3}
+.atlas-heading{padding:24px 28px;gap:20px}
+.atlas-heading h2{font-size:26px;line-height:1.5}
+.atlas-heading h2>span{font:18px var(--sans);margin-left:12px;color:#806c54;white-space:nowrap}
+.atlas-heading h2 b{color:var(--red);font-size:24px}
+.atlas-heading p{font-size:16px;color:#79664f;margin-top:7px}
+.atlas-heading .outline{font-size:16px;min-height:46px;background:#fff9ef}
+.progress-map-viewport{overflow:auto;overscroll-behavior-x:contain;scrollbar-width:thin;background:#fffdf8}
+.progress-map-viewport:focus-visible{outline:3px solid #bc8d42;outline-offset:-3px}
+.progress-map-board{position:relative;min-width:820px}
+.progress-map-board>img{display:block;width:100%;height:auto}
+.map-progress-markers{position:absolute;inset:0;pointer-events:none}
+.progress-pin{position:absolute;z-index:2;display:grid;place-items:center;width:36px;height:36px;padding:0;border:2px solid #807a6f;border-radius:50%;background:#fffdf5;color:#5b554d;box-shadow:0 0 0 5px #fffdf1c9,0 3px 10px #352b2529;transform:translate(-50%,-50%);pointer-events:auto;font:600 18px var(--sans)}
+.progress-pin.is-current{outline:3px solid #b38b40;outline-offset:5px;z-index:3}
+.progress-pin.is-complete{border-color:#8e211d;background:var(--red);color:#fff7df;box-shadow:0 0 0 6px #f5d793b3,0 0 24px 13px #e1b55170}
+.progress-pin:hover,.progress-pin:focus-visible{z-index:5;transform:translate(-50%,-50%) scale(1.12);background:#f3e4c8;color:#5c3c24}
+.progress-pin.is-complete:hover,.progress-pin.is-complete:focus-visible{background:var(--red-dark);color:#fff8e3}
+.pin-label{position:absolute;left:50%;bottom:calc(100% + 10px);transform:translateX(-50%);white-space:nowrap;background:#fff9ed;color:#702820;border:1px solid #c5a471;border-radius:5px;padding:5px 12px;font-size:17px;box-shadow:0 4px 12px #4a2e2420;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .2s}
+.progress-pin:hover .pin-label,.progress-pin:focus-visible .pin-label{visibility:visible;opacity:1}
+.route-atlas .station-list{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;padding:25px 28px 18px}
+.route-atlas .station-list button{gap:12px;min-height:56px;padding:12px 14px;color:#645442;background:#fffcf5;border:1px solid #d9c8ad;border-radius:6px}
+.route-atlas .station-list button>b{color:inherit;font-size:17px;line-height:1.6;font-weight:500}
+.route-atlas .station-list button>span{color:inherit;font:600 17px var(--sans);min-width:20px;text-align:center}
+.route-atlas .station-list button.is-complete{background:#f6e4d7;border-color:#c99578;color:#8e211d}
+.route-atlas .station-list button:hover,.route-atlas .station-list button:focus-visible{background:#eedcc0;color:#6d3b26;border-color:#a87546;transform:translateY(-3px)}
+.route-atlas .station-list button.selected,.route-atlas .station-list button.selected:hover,.route-atlas .station-list button.selected:focus-visible{background:var(--red-dark);color:#fff8e8;border-color:var(--red-dark)}
+.route-atlas .station-list button.selected>b,.route-atlas .station-list button.selected>span{color:#fff8e8}
+.atlas-note{margin:0 28px 24px;color:#78654d;font-size:14px}
+.atlas-note a{color:#873329;text-decoration:underline;text-underline-offset:3px;margin-left:8px}
+.journey-layout>.chapter-panel{display:block;margin-top:28px;padding:30px 34px;border-top:3px solid var(--red);background:#fffaf2}
+.journey-layout .chapter-num{display:flex;align-items:center;gap:16px;color:var(--red);font-size:16px}
+.journey-layout .chapter-num>span{font-size:16px;color:#8b775f}
+.journey-layout .chapter-panel h2{font-size:32px;margin:14px 0 12px}
+.journey-layout .chapter-meta{display:flex;flex-direction:row;justify-content:flex-start;flex-wrap:wrap;gap:8px 24px;padding-bottom:15px;margin-bottom:18px;font-size:16px;color:#796850}
+.journey-layout .chapter-summary{max-width:950px;font-size:18px;line-height:2}
+.chapter-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:24px}
+.chapter-actions .text-button{font-size:16px}
+.chapter-references{margin-top:22px;font-size:15px;color:#806b50}
+.chapter-references summary{font-size:15px}
+.journey-tabs button[aria-pressed=true]:hover,.journey-tabs button[aria-pressed=true]:focus-visible{background:var(--red-dark);color:#fff8e8}
+@media(max-width:1200px){.site-header{gap:16px;padding:18px 28px}.site-header nav a{padding:10px 11px;font-size:16px}.site-header .brand strong{font-size:23px}.header-progress{min-width:80px}body footer{margin-left:38px;margin-right:38px}.route-atlas .station-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:980px){body{padding-bottom:80px}.site-header{min-height:80px;padding:16px 28px}.site-header nav{position:fixed;left:0;right:0;bottom:0;z-index:20;height:76px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;border-top:1px solid #dfd0ba;background:#faf6edf5;backdrop-filter:blur(16px);padding:4px 10px}.site-header nav a{display:flex;flex-direction:column;justify-content:center;gap:6px;padding:6px 0;font-size:14px;border-radius:6px;min-width:0;line-height:1.5}.site-header nav a .icon{display:block;width:22px;height:22px}.site-header nav a.active,.site-header nav a.active:hover,.site-header nav a.active:focus-visible{background:#efdeca;color:var(--red-dark)}.site-header nav a:hover,.site-header nav a:focus-visible{transform:none}.header-progress{min-width:110px}.toast{bottom:95px}}
+@media(max-width:650px){body #content{padding:20px 16px 0}.site-header{min-height:76px;padding:15px 18px;gap:16px}.site-header .brand{gap:10px}.site-header .brand-mark{width:36px;min-width:36px;height:36px;font-size:26px}.site-header .brand strong{font-size:22px}.site-header nav{height:74px;padding:3px 4px}.site-header nav a{font-size:12px;gap:6px}.header-progress{min-width:96px;font-size:14px}body footer{margin:32px 16px 0;flex-wrap:wrap}.atlas-heading{padding:20px 18px;flex-wrap:wrap;gap:15px}.atlas-heading h2{font-size:24px}.atlas-heading p{font-size:15px}.atlas-heading .outline{font-size:15px;padding:8px 14px;min-height:44px}.progress-pin{width:34px;height:34px;font-size:17px}.route-atlas .station-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:22px 16px 18px}.route-atlas .station-list button{padding:11px 10px;gap:8px;min-height:54px}.route-atlas .station-list button>b{font-size:16px}.atlas-note{margin:0 17px 22px;line-height:1.9}.atlas-note a{display:block;margin:6px 0 0}.journey-layout>.chapter-panel{padding:25px 22px;margin-top:22px}.journey-layout .chapter-panel h2{font-size:30px}.journey-layout .chapter-meta{font-size:15px;gap:6px 18px}.journey-layout .chapter-summary{font-size:18px}.chapter-actions{gap:16px}.chapter-actions .primary{width:100%;padding:12px;font-size:16px;gap:12px}.chapter-actions .text-button{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.progress-pin,.pin-label{transition:none}}

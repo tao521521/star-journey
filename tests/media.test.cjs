@@ -25,3 +25,14 @@ test('the historical atlas is local, attributed and loaded before the app',()=>{
  const index=fs.readFileSync(path.join(root,'index.html'),'utf8');
  assert.ok(index.indexOf('media.js')<index.indexOf('app.js'));
 });
+test('each chapter has a distinct, usable learning marker on the historical atlas',()=>{
+ assert.deepEqual(Object.keys(D.progressPins).sort(),Array.from(D.chapters,c=>c.id).sort());
+ const positions=new Set();
+ for(const chapter of D.chapters){
+  const point=D.progressPins[chapter.id];
+  assert.equal(point.length,2);
+  assert.ok(point.every(value=>Number.isFinite(value)&&value>0&&value<100));
+  assert.ok(!positions.has(point.join(',')),`${chapter.id} must have its own marker`);
+  positions.add(point.join(','));
+ }
+});
