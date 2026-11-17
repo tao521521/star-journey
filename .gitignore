@@ -2,6 +2,7 @@ node_modules/
 __pycache__/
 *.tar.gz
 *.zip
+!提交/*.zip
 .sites/
 screenshots/
 .netlify/

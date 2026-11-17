@@ -23,7 +23,7 @@
  function radioStep(model,index,action){
   const fail=message=>({model,message,ok:false});
   if(model.finished)return fail('本次接力已完成，可以重新体验。');
-  if(![0,1].includes(index))return fail('请选择A或B电台。');
+  if(![0,1].includes(index))return fail('请选择一号或二号电台。');
   const next={...model,stations:model.stations.map(s=>({...s}))},station=next.stations[index],other=next.stations[1-index];
   if(action==='move'){
    if(station.phase==='onair')return fail('这部电台正在驻守通信。先让另一部转移、架设并确认联络，再交接岗位。');

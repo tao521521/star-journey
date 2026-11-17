@@ -23,6 +23,6 @@ jobs:
           node --check dist/data.js
           node --check dist/core.js
       - name: Verify game rules and content references
-        run: node --test tests/core.test.cjs
+        run: node --test tests/*.test.cjs
       - name: Check deploy entrypoint
         run: test -f dist/index.html && test -f dist/assets/long-march-woodcut.png
