@@ -119,3 +119,81 @@ body:has(dialog[open]){overflow:hidden}dialog{border:1px solid #dbc6a7;padding:0
  .radio-feedback {font-size:14px}
  .radio-network {min-height:125px}
 }
+
+/* Stable route area: panel content cannot stretch the map. */
+.journey-layout {align-items:start}
+.journey-map {width:100%;height:auto;min-height:0;aspect-ratio:1;align-self:start}
+.map-art {pointer-events:none}
+.route-segments path {fill:none;stroke:#bda181;stroke-width:2.5;stroke-dasharray:6 6;vector-effect:non-scaling-stroke}
+.route-segments path.travelled {stroke:#b82d25;stroke-width:3;stroke-dasharray:none}
+.chapter-panel {min-width:0;animation:chapter-in .16s ease-out}
+@keyframes chapter-in {from {opacity:.65} to {opacity:1}}
+.map-node b {font-weight:500}
+.map-node.selected.completed>span {background:var(--red);border-color:var(--red)}
+.welcome-motif {color:#b78a4f;font:30px Georgia;letter-spacing:8px;margin:18px 0}
+.graph-welcome>h2 {font-size:29px;line-height:1.7}
+.graph-counts {display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:26px 0}
+.graph-counts>div {padding:14px 8px;border-top:1px solid #d6bc94;background:#f3e5ce}
+.graph-counts dt {font-size:12px;color:#81674e}
+.graph-counts dd {margin:5px 0 0;font:29px Georgia;color:var(--red)}
+.graph-recommendation {display:block;width:100%;border:1px solid #b99564;padding:22px 18px;text-align:left;background:#f1dfbf;color:#783d2a}
+.graph-recommendation small,.graph-recommendation strong,.graph-recommendation>span {display:block}
+.graph-recommendation small {font-size:11px;letter-spacing:1px;color:#977346}
+.graph-recommendation strong {font:600 23px/1.7 var(--serif);margin:11px 0}
+.graph-recommendation>span {font-size:13px}
+.graph-recommendation .icon {width:17px;height:17px;margin-left:6px}
+.graph-guide {border-top:1px dashed #cdb493;margin-top:26px;padding-top:22px}
+.graph-guide ol {display:flex;gap:8px;flex-wrap:wrap;list-style:none;margin:16px 0;padding:0;counter-reset:steps}
+.graph-guide li {counter-increment:steps;font-size:13px;line-height:1.8;color:#815c3f}
+.graph-guide li:before {content:counter(steps,decimal-leading-zero);color:var(--red);margin-right:5px;font-family:Georgia}
+.graph-guide li:not(:last-child):after {content:' →';color:#bb9869}
+.graph-guide p {font-size:12px}
+.challenge-hero:after {pointer-events:none}
+.challenge-emblem {display:block;width:290px;min-width:260px;height:auto;flex-shrink:0;outline:none;border-radius:3px;margin:0;padding:20px;background:#f9efdd;z-index:1}
+.quiz-score-heading {display:flex;align-items:center;gap:9px;font-size:13px;color:#8b6642}
+.challenge-emblem .icon {margin:0;width:20px;height:20px}
+.quiz-score-values {display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:18px 0 0}
+.quiz-score-values dt {font-size:12px;color:#896b4e}
+.quiz-score-values dd {font:36px Georgia;color:var(--red);margin:10px 0}
+.quiz-score-values dd small {font:13px var(--sans);margin-left:4px}
+.quiz-score-values dd>span {font:14px/1.8 var(--sans)}
+.quiz-score-values p {font-size:11px;line-height:1.8;color:#94704b}
+.bag-quiz-summary {border:1px solid #d7c0a1;background:#f7ecdb;padding:22px;margin-top:18px;max-width:600px}
+.new-record {animation:quiz-record 1.4s ease-out}
+@keyframes quiz-record {from {box-shadow:0 0 0 3px #b8934e;background:#f0d7a2} to {box-shadow:0 0 0 0 transparent}}
+.quiz-record-note {padding:12px 16px;background:#f2e4cc;color:#886230;font-size:13px;text-align:center}
+@media(max-width:1190px) {.challenge-hero {gap:22px;flex-wrap:wrap}.challenge-emblem {width:100%;max-width:420px;min-width:0}}
+@media(max-width:650px) {.journey-map {aspect-ratio:900/1250}.graph-counts {gap:9px}.graph-welcome>h2 {font-size:26px}.graph-recommendation strong {font-size:21px}.challenge-hero {gap:24px}.challenge-emblem {display:block;padding:18px;width:100%}.quiz-score-values dd {font-size:33px}.bag-quiz-summary {padding:18px}}
+
+/* Preview and exploration feedback stay outside the map's layout. */
+.map-preview {position:absolute;z-index:5;width:270px;max-width:calc(100% - 20px);padding:16px;background:#fff8e9;border:1px solid #c09b6b;box-shadow:0 6px 20px #58402720;pointer-events:none;color:#795037}
+.map-preview strong {display:block;font:600 19px/1.5 var(--serif);color:#8d2d23}
+.map-preview span {display:block;font-size:11px;line-height:1.9;margin:6px 0}
+.map-preview p {font-size:12px;line-height:1.8}
+.map-node.viewed:not(.completed):not(.selected)>span {border-style:dashed;border-color:var(--red);color:var(--red)}
+.viewed-legend i {background:transparent!important;border:1px dashed var(--red)}
+.station-list button {min-height:54px}
+.station-list button[aria-pressed=true] {color:var(--red)}
+.graph-exploration:empty {display:none}
+.graph-exploration {padding:18px;border-top:1px dashed #d9c5a7}
+.graph-breadcrumb {display:flex;flex-direction:row;align-items:center;flex-wrap:wrap;gap:6px;color:#a27c53}
+.graph-breadcrumb button {min-height:44px;font-size:13px;color:#8f3026;padding:5px 6px;text-align:left}
+.history-discovery {margin-top:12px;background:#f1e1c3;border-left:2px solid #b8894b;padding:15px}
+.history-discovery p {font:15px/1.9 var(--serif);color:#78442e}
+.history-discovery .source-inline {font-size:11px;line-height:1.9}
+.history-discovery small {display:block;color:#99734d;font-size:11px;margin-top:10px}
+.graph-edge.path-active path {stroke:var(--red);stroke-width:3}
+.graph-edge.path-active text {fill:var(--red)}
+.graph-edge.path-muted {opacity:.3}
+.graph-node.path-related:not(.path-current) rect {stroke:#b86a35;stroke-width:2.5}
+.graph-node.path-current rect {fill:var(--red);stroke:var(--red);stroke-width:3}
+.graph-node.path-current text {fill:#fff1d8}
+.quiz-graph-link {display:block;min-height:44px;text-align:left;margin-top:12px;padding:10px 14px;border:1px solid #c7a779;background:#f4e5cb;font-size:13px;color:#963328}
+.quiz-review-item {padding:20px 0;border-bottom:1px solid #ddc6a5}
+.quiz-review-item h3 {font:600 21px/1.8 var(--serif);margin-bottom:14px}
+.quiz-review-item p {font-size:14px;line-height:2;margin:8px 0}
+.quiz-review-item .review-user-answer {color:#a13f2d}
+.quiz-review-item .review-correct-answer {color:#6d632e}
+.quiz-review-item .source-inline {display:block;line-height:2;font-size:12px}
+@media(hover:none) {.map-preview {display:none}}
+@media(max-width:650px) {.graph-exploration {padding:14px}.quiz-review-item h3 {font-size:19px}.graph-breadcrumb button {font-size:12px}}

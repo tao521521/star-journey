@@ -127,3 +127,33 @@ test('communication archive and graph references have provenance, without invent
  assert.match(t.distinction,/通信保障/);assert.match(t.distinction,/技术侦察/);assert.match(t.modelNote,/教育模型/);
  assert.ok(D.stories.some(s=>s.id==='radio'));
 });
+
+test('quiz records last result independently of historical best and rounds 5/6 to 83',()=>{
+ let s=C.recordQuiz(C.initial(),5,6);
+ assert.deepEqual(s.lastQuiz,{correct:5,total:6,score:83});assert.equal(s.bestScore,83);assert.equal(s.quizRuns,1);
+ s=C.recordQuiz(s,6,6);assert.equal(s.bestScore,100);assert.equal(s.lastQuiz.score,100);
+ s=C.recordQuiz(s,2,6);assert.equal(s.bestScore,100);assert.equal(s.lastQuiz.score,33);assert.equal(s.quizRuns,3);
+ assert.deepEqual(s.completed,[]);assert.deepEqual(s.learningBadges,[]);
+});
+test('quiz state migration preserves existing progress and distinguishes missing results from zero',()=>{
+ const legacy={completed:['xiangjiang'],read:['chen'],favorites:['chen'],note:'保留手记',bestScore:83,quizRuns:2};
+ const s=C.normalize(legacy);assert.equal(s.lastQuiz,null);assert.equal(s.bestScore,83);assert.equal(s.quizRuns,2);
+ for(const key of ['completed','read','favorites','note'])assert.deepEqual(s[key],legacy[key]);
+ const zero=C.recordQuiz(s,0,6);assert.equal(C.normalize(zero).lastQuiz.score,0);
+ for(const lastQuiz of [{correct:7,total:6},{correct:-1,total:6},{correct:1,total:0},{correct:1.5,total:6},{correct:NaN,total:6},'bad'])assert.equal(C.normalize({...legacy,lastQuiz}).lastQuiz,null);
+ assert.deepEqual(C.normalize({...legacy,lastQuiz:{correct:5,total:6,score:100}}).lastQuiz,{correct:5,total:6,score:83});
+ for(const [correct,total] of [[7,6],[-1,6],[1,0],[1,7]])assert.throws(()=>C.recordQuiz(s,correct,total),RangeError);
+});
+
+test('exploration paths only follow real directed relations and never invent a quilt connection',()=>{
+ assert.deepEqual(C.relationPath(D.graph.relations,'xiangjiang','person:chen-shuxiang'),['xiangjiang','event:xiangjiang','person:chen-shuxiang']);
+ assert.deepEqual(C.relationPath(D.graph.relations,'person:chen-shuxiang','story:chen'),['person:chen-shuxiang','story:chen']);
+ assert.deepEqual(C.relationPath(D.graph.relations,'xiangjiang','story:quilt'),[]);
+ assert.deepEqual(C.relationPath(D.graph.relations,'yudu','event:xiangjiang'),[],'time order does not imply an association');
+ assert.deepEqual(C.relationPath([{from:'a',to:'b'},{from:'b',to:'a'}],'a','c'),[],'cycles must terminate');
+});
+test('only explicitly mapped historical questions link to valid chapters',()=>{
+ for(const q of D.questions.filter(q=>q.chapterId))assert.ok(D.chapters.some(c=>c.id===q.chapterId));
+ assert.equal(D.questions[0].chapterId,'yudu');assert.equal(D.questions[11].chapterId,'xiangjiang');
+ for(const index of [6,7,8,9,10])assert.equal(D.questions[index].chapterId,undefined);
+});
