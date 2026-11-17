@@ -1,7 +1,7 @@
 {
   "源码包": "星火征程-完整源码.zip",
-  "文件数": 41,
-  "源码包SHA256": "56a25d50acbae9ad10c4afb6da0565734e1c076bfa63446ea7b35476c7454465",
+  "文件数": 42,
+  "源码包SHA256": "470290d4af1c9896e1d0cd4425b2e395c60b14999b7d0ff03d08eba94bcf53e6",
   "文件SHA256": {
     ".github/workflows/checks.yml": "98f103d0275cb697794ca07d627ae63463a2b1fb29d4e8ca1991525016899896",
     ".gitignore": "78912d605e9def2f873cb58c2b9d68a6d213050720e894793d2cc04a593d6e4d",
@@ -34,16 +34,17 @@
     "dist/style.css": "efd10fbd6392328a37a3d5fd7504dc413b2782a9451e3086b44cef18d0e6c8e8",
     "GitHub与Netlify部署说明.md": "1c54b3bed2bc006c15c8ea4bb71529884cf9438d64c26a3560356654e381467b",
     "netlify.toml": "3923f264ccb9b7f901d0703f4aa48d715de2874e3b253ad1f73a88f7f124df2c",
-    "README.md": "88e7ceae5716f04c679ad2cbf344e42f443444fab51ebe5b1d2286edce7b7710",
+    "README.md": "7a289f2eb0a2a62e87be313a7ef66c095305064eaba4a63eb493f2e3f93d224f",
     "run.py": "fb4119b998bbafc3428479de3fa672947f54e9da2ff08586ecb3a46437749cba",
     "tests/core.test.cjs": "ad6d7cb62501a7962a0c9f745d79ebd580665263788d4082bd568f773b2032d0",
     "tests/media.test.cjs": "707bcf3828f9b394f0d28419e577b265d7bb37c4bc12caab4ef80c19bf0f26be",
+    "tools/make_demo.py": "436bbf8bd88ef64dcbb2324ef5c625f484700d84e12b012aff3fc4b28aa8d61c",
     "tools/package_submission.py": "e8db84e9a7b55f0374bf59646faa4869bf7306b826de4b559692c2b1c264bf3b",
     "启动项目.bat": "3f299c04e34118a798c1ff067716cc6b8421f1dbb78d1cafff3d3f8b944f0f5b",
     "演示与提交说明.md": "ca764b12445dd4a3c30cc38e60baac7b12ea4ef9cd1a960f69e1f01ae590ce95",
     "素材与史实核查.md": "a1d7d6bc01b6b8e33bcf41bd0ca849616c64ec86a9c8b785fb46b0ea685a58ad",
     "设计与素材说明.md": "de67810c30609435f9f615d8f41117438c5c813db88d74f1f4fb90809d43a9dc",
-    "验证记录.md": "c8a45f946b2ceb46db6c3e0e88d2b0c5ff7d4d670e747596c229fe9079e05f24"
+    "验证记录.md": "489a5601c5d43ebd88d02a41daa61757e3724adbced0156b5e75f7bb286498d6"
   },
   "排除内容": [
     "Git元数据",

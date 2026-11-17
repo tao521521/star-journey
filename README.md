@@ -53,6 +53,8 @@ LocalStorage 键仍为 `xinghuo-journey-v1`，旧进度继续兼容。记录只�
 
 执行 `node --test tests/*.test.cjs` 运行全部检查。GitHub Actions 在推送和拉取请求中自动运行测试。
 
+提交视频使用 `提交/演示视频/星火征程-功能展示-兼容版.mp4`，为54秒、720p、固定30帧的无声截图展示。需要重新生成时，可运行 `python tools/make_demo.py`；此维护工具需要 Pillow 与 ffmpeg（或 imageio-ffmpeg），网页运行不需要这些依赖。工具会核对实际帧数与连续时间戳，再替换输出文件。
+
 本项目无需构建，没有 `package.json`。`dist` 是真实源码目录，必须提交。Netlify 从 `main` 自动发布，构建命令留空、发布目录为 `dist`。日常协作流程见 `GitHub与Netlify部署说明.md`。
 
 原学校通知 Word 文件与在线报名表不属于本轮修改范围，没有修改其中内容，也没有代替团队报名或向学校提交。
